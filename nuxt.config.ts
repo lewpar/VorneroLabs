@@ -8,7 +8,7 @@ export default defineNuxtConfig({
   devtools: { enabled: false },
 
   app: {
-    baseURL: "/vornerolabs/"
+    baseURL: "/VorneroLabs/"
   },
 
   modules: [
