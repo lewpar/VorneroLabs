@@ -20,16 +20,21 @@ onMounted(async () => {
                 No lab found.
             </template>
             <template v-else>
-                <div class="lab">
-                    <div class="lab-header">
-                        <div class="title">{{ lab.metadata.title }}</div>
-                        <div class="subtitle"></div>
-                    </div>
+                <Card class="lab">
+                    <template #title>
+                        <h1 class="title">
+                            {{ lab.metadata.title }}
+                        </h1>
+                    </template>
 
-                    <div class="lab-content">
-                        <div v-html="lab.content"></div>
-                    </div>
-                </div>
+                    <template #subtitle>
+                        {{ lab.metadata.subtitle }}
+                    </template>
+
+                    <template #content>
+                        <div class="markdown" v-html="lab.content"></div>
+                    </template>
+                </Card>
             </template>
         </template>
     </div>
@@ -42,23 +47,7 @@ onMounted(async () => {
 
     gap: 1rem;
 }
-.lab-header {
-    display: flex;
-    flex-direction: column;
-
-    gap: 0.5rem;
-}
-.lab-header .title {
-    font-weight: bold;
-    font-size: 2rem;
-}
-.lab-header .subtitle {
-    color: rgb(169, 169, 169);
-}
-.instructions {
-    display: flex;
-    flex-direction: column;
-
-    gap: 1rem;
+.lab .title {
+    margin: 0;
 }
 </style>

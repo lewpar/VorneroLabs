@@ -24,7 +24,7 @@ body {
     opacity: 0;
 
     animation-name: fade-in;
-    animation-duration: 1s;
+    animation-duration: 0.5s;
     animation-fill-mode: forwards;
 }
 
@@ -36,4 +36,32 @@ body {
     to {
         opacity: 1;
     }
+}
+
+.markdown pre {
+    padding: 1rem;
+
+    background-color: rgba(0, 0, 0, 0.25);
+
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+.markdown pre {
+    overflow-y: auto;
+}
+
+.markdown ol {
+    list-style-position: inside;
+
+    padding: 0;
+}
+
+.markdown ul {
+    list-style-position: inside;
+
+    padding: 0;
+}
+.markdown ul li {
+    margin: 0 !important;
 }
