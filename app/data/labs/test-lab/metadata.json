@@ -2,5 +2,5 @@
     "title": "Test Lab",
     "subtitle": "Cyber Security",
     "content": "This task introduces students to basic malware investigation on a Linux system. They’ll identify, analyse, and remove a simple malware script using tools like Wireshark and grep, while learning key cyber security concepts like persistence and prevention.",
-    "cover": "/covers/lab01.jpeg"
+    "cover": "./covers/lab01.jpeg"
 }
