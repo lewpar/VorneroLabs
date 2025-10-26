@@ -6,6 +6,7 @@ export interface LabMetadata {
     title: string;
     subtitle: string;
     content: string;
+    cover: string;
 }
 
 export interface Lab {

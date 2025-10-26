@@ -11,7 +11,6 @@ onMounted(async () => {
 
 <template>
     <div class="page">
-        <NuxtLink to="/"><Button>Back to Labs</Button></NuxtLink>
         <template v-if="lab == undefined">
             Loading..
         </template>
@@ -21,14 +20,18 @@ onMounted(async () => {
             </template>
             <template v-else>
                 <Card class="lab">
-                    <template #title>
-                        <h1 class="title">
-                            {{ lab.metadata.title }}
-                        </h1>
-                    </template>
-
-                    <template #subtitle>
-                        {{ lab.metadata.subtitle }}
+                    <template #header>
+                        <div class="header" :style="`background-image: url('${lab.metadata.cover}')`">
+                            <div class="title">
+                                {{ lab.metadata.title }}
+                            </div>
+                            <div class="subtitle">
+                                {{ lab.metadata.subtitle }}
+                            </div>
+                            <div class="content">
+                                {{ lab.metadata.content }}
+                            </div>
+                        </div>  
                     </template>
 
                     <template #content>
@@ -45,9 +48,37 @@ onMounted(async () => {
     display: flex;
     flex-direction: column;
 
-    gap: 1rem;
+    position: relative;
 }
-.lab .title {
+.lab .image {
+    position: absolute;
+
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    width: 100%; 
+    max-height: 200px; 
+    object-fit: cover;
+
+    user-select: none;
+    pointer-events: none;
+}
+.lab .header {
+    display: flex;
+    flex-direction: column;
+
+    gap: 1rem;
+
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+
+    padding: 1rem;
+}
+.lab .header .subtitle {
+    color: rgb(179, 179, 179);
+}
+.lab .header .title {
     margin: 0;
+    font-size: 2rem;
 }
 </style>

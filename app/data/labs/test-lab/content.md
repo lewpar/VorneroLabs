@@ -1,7 +1,3 @@
-## Preamble
-
-This task introduces students to basic malware investigation on a Linux system. They’ll identify, analyse, and remove a simple malware script using tools like Wireshark and grep, while learning key cyber security concepts like persistence and prevention.
-
 ## Prepare Environment
 1. Create a virtual machine image with a Graphical version of Linux.
 2. Ensure the following tools are installed on the system:
