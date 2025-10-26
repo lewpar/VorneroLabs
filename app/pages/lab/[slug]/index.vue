@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { type Lab, getLabBySlug } from '~/lib/LabData';
 
+const config = useRuntimeConfig();
+
 const route = useRoute();
 const lab = ref<Lab | null | undefined>(undefined);
 
@@ -21,7 +23,7 @@ onMounted(async () => {
             <template v-else>
                 <Card class="lab">
                     <template #header>
-                        <div class="header" :style="`background-image: url('${lab.metadata.cover}')`">
+                        <div class="header" :style="`background-image: url('${config.app.baseURL}${lab.metadata.cover}')`">
                             <div class="title">
                                 {{ lab.metadata.title }}
                             </div>
